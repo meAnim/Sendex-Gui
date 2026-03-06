@@ -1,30 +1,25 @@
 package alphaView;
 
-
-
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
 
 import javax.swing.*;
 
-public class CalcView extends JFrame implements ActionListener{
+public class CalcView extends JFrame{
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	JLabel label = new JLabel("Anim Calculator");
+	JLabel label = new JLabel("Calculator");
+	JTextField calcInput = new JTextField(30);
+	JPanel topInput  = new JPanel();
+	
 	
 	public CalcView(){
 		this.setTitle("Anim Calculator");
-		this.setLayout(new FlowLayout());
 		this.setSize(500, 500);
+		this.setLayout(new BorderLayout());
 		
-		
-		this.add(label);
+		this.add(topInput);
+		topInput.add(label);
+		topInput.add(calcInput);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
